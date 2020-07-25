@@ -1,5 +1,8 @@
 ﻿using System;
 
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
@@ -14,6 +17,8 @@ namespace ATXamarin.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            AppCenter.Start("{c16c7385-9bd7-498a-a4f3-fb42deed6de2}", typeof(Analytics), typeof(Crashes));
+
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
